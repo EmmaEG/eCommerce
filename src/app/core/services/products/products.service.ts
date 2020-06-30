@@ -14,7 +14,7 @@ export class ProductsService {
     private http: HttpClient // inyecto la dependencia
   ) { }
 
-  getAllProducts() { // este get resuelve un arrau de tipo product
+  getAllProducts() { // este get resuelve un array de tipo product
     return this.http.get<Product[]>(`${environment.url_api}products`);
   }
 

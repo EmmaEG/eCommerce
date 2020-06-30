@@ -26,9 +26,9 @@
         grid-template-columns: repeat(3, 1fr); //para que se repita 3 veces
     }
     .container {
-        max-width: 1250px;  
-        padding-right: 0px;
-        padding-left: 0px;
+        max-width: 1110px;  
+        padding-right: 16px;
+        padding-left: 16px;
     }
 }
 
@@ -36,3 +36,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+img {
+    max-width: 100%;
+  }

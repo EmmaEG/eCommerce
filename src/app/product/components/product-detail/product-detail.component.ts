@@ -34,6 +34,21 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  createProduct() {
+    const newProduct: Product = {
+      id: '222',
+      title: 'nuevo desde angular',
+      image: 'assets/images/banner-1.jpg',
+      price: 3000,
+      description: 'nuevo producto'
+    };
+    this.productsService.CreateProduct(newProduct)
+    .subscribe(product => {
+      console.log(product);
+  });
+
+}
+
 }
 
 /* 1) quiero los parametros que tenga en la ruta y nos subscribimos para escuchar los cambios que haya

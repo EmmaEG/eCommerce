@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+/* body {
+    margin: 0px;
+    padding: 0px;
+} */
+
+// haremos una grilla para mostrar los productos
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); //para que se repita 1 vez
+    grid-gap: 50px 20px; // margen del grid entre 50px de costado y 20px a lo alto
+}
+
+.container {
+  width: 100%;  
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+//en pantalla grandes a partir de 576px
+@media (min-width: 576px) { 
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); //para que se repita 3 veces
+    }
+    .container {
+        max-width: 1250px;  
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+// Comfig Angular Material
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

@@ -1,0 +1,7 @@
+<div class="product-grid"><!--recorro un objeto es diferente a recorrer una list, debo recorrer cada uno de sus atributos-->
+    <app-product
+     *ngFor="let product of products"
+     (productClicked)="clickProduct($event)"
+     [product]="product"></app-product>
+     <!--utilizo el input product con corchetes y el output con parentesis-->
+</div>

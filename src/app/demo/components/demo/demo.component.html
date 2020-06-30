@@ -1,0 +1,35 @@
+<!--
+<input type="text" [(ngModel)]="title"> <!--enlace de datos entre en template y el modulo y viceversa
+{{ title }} <!--la dif entre esto y un h1 es que en las llaves yo puedo ejecutar intrucciones de JS
+
+<input type="text" [(ngModel)]="power"> 
+{{ power | exponential }}
+-->
+<div *ngIf="title === 'nicolas'">
+    este es nicolas
+</div>
+
+<div *ngIf="title === 'julian'">
+    este es julian
+</div>
+
+<div *ngIf="title === 'camilo'">
+    este es camilo
+</div>
+
+<div [ngSwitch]="title">
+    <p *ngSwitchCase="'nicolas'">este es nicolas</p>
+    <p *ngSwitchCase="'julian'">este es julian</p>
+    <p *ngSwitchCase="'camilo'">este es camilo</p>
+    <p *ngSwitchDefault>No hay match</p>
+</div>
+
+<button (click)="addItem()">Add item</button>
+
+<ul>
+    <li *ngIf="items.length === 0">La lista está vacía</li>
+    <li *ngFor="let name of items; index as i"> <!--recorro una lista-->
+        {{name}} {{ i }}
+        <button (click)="deleteItem(i)">delete</button>
+    </li>
+</ul>

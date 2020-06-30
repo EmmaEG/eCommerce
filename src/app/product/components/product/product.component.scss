@@ -1,0 +1,23 @@
+/*
+:host { // es el div padre que crea angular
+    margin: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block; // ancho y alto dinamico respecto al elemento
+}*/
+
+//mascara
+.crop-image {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+
+    }
+}

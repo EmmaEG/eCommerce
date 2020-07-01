@@ -9,13 +9,6 @@ import { MaterialModule } from './../material/material.module';
 import { NavComponent } from './components/nav/nav.component';
 import { TableComponent } from './components/table/table.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatMenuModule } from '@angular/material/menu';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 
 
@@ -26,13 +19,6 @@ import { ProductsListComponent } from './components/products-list/products-list.
     AdminRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
-    MatSidenavModule,
-    MatListModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatGridListModule,
-    MatMenuModule,
   ]
 })
 export class AdminModule { }

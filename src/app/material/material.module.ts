@@ -17,6 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatGridListModule,
     MatMenuModule,
     MatPaginatorModule,
-    LayoutModule
+    LayoutModule,
+    MatFormFieldModule
   ],
   exports: [ // lo exportamos para que lo puedna usar otros modulos
     MatButtonModule,
@@ -56,7 +58,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatGridListModule,
     MatMenuModule,
     MatPaginatorModule,
-    LayoutModule
+    LayoutModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModule { }

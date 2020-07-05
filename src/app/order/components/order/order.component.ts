@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
+import { Product } from './../../../core/models/product.model';
+import { CartService } from './../../../core/services/cart.service';
+
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -7,7 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+  products$: Observable<Product[]>;
+
+  constructor(
+    private cartService: CartService
+  ) {
+    this.products$ = this.cartService.cart$; // escucha el array continuamente de los productos que agregamos
+   }
 
   ngOnInit(): void {
   }

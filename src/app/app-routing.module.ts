@@ -23,12 +23,10 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        canActivate: [AdminGuard], // guardian de ruta
         loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard], // guardian de ruta
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       },
       {
@@ -43,7 +41,12 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    canActivate: [AdminGuard], // guardian de ruta
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   { // el error siempre debe estar cargado al final xq sino no encuentra las rutas
     path: '**', // no hay match, no existe la ruta

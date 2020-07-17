@@ -24,7 +24,8 @@ import { MaterialModule } from './../material/material.module';
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ReactiveFormsModule
   ],
   imports: [
     CommonModule,

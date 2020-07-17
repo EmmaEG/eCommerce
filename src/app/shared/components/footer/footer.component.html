@@ -25,10 +25,10 @@
         </div>
         <div class="col-xs-12 col-md-4">
           <div class="box">
-            <h3>Acerca de PlatziStore</h3>
+            <h3>Acerca de Store</h3>
             <ul>
-              <li><a routerLink="/about-us">Sobre nosotros</a></li>
-              <li><a routerLink="/stores">Nuestras tiendas</a></li>
+              <li><a routerLink="/home">Sobre nosotros</a></li>
+              <li><a routerLink="/home">Nuestras tiendas</a></li>
             </ul>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <div class="box">
             <h3>Contacto</h3>
             <mat-form-field>
-              <input matInput placeholder="escriba su correo" [formControl]="emailField" type="email">
+              <input matInput placeholder="Escriba su correo" [formControl]="emailField" type="email">
             </mat-form-field>
             <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()" >Enviar</button>
             <!-- <mat-form-field color="accent" class="full-width">

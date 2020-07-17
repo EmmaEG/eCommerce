@@ -1,1 +1,33 @@
-<p>contact</p>
+<form [formGroup]="contactForm" (ngSubmit)="SendForm($event)"> 
+    <mat-card> 
+        <mat-card-header>
+          <mat-card-title>Contacto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field class="example-full-width">
+              <mat-label>Nombre Completo</mat-label>
+              <input matInput formControlName="name" placeholder="Ex. Juan J. Jiju" required>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" placeholder="Ex. pat@example.com" required>
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width">
+              <mat-label>Dejanos tu mensaje</mat-label>
+              <textarea matInput formControlName="message" required></textarea>
+            </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+                <a mat-raised-button routerLink="/home">Cancel</a>
+                <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid" required >Enviar</button>
+    </mat-card-actions>
+    </mat-card>
+  </form>
+
+
+
+
+  
+

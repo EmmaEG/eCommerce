@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { ContactDbService } from './../../../core/services/contact/contact-db.service';
-
 
 @Component({
   selector: 'app-contact',
@@ -11,13 +11,16 @@ import { ContactDbService } from './../../../core/services/contact/contact-db.se
 })
 export class ContactComponent implements OnInit {
 
+  status: string;
   contactForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private contactDbService: ContactDbService
+    private contactDbService: ContactDbService,
+    private router: Router,
   ) {
     this.buildForm(); // llamamos al metodo aquí dado que es una construccion
+    this.status = 'true';
    }
 
   ngOnInit() {
@@ -40,6 +43,10 @@ export class ContactComponent implements OnInit {
     this.contactForm.get('name').setErrors(null);
     this.contactForm.get('email').setErrors(null);
     this.contactForm.get('message').setErrors(null);
+    this.status = 'false';
+    setTimeout(() => {
+      this.router.navigate(['./home']);
+     }, 3000);
     }
   }
 

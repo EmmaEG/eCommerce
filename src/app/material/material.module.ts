@@ -19,7 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -42,7 +42,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatPaginatorModule,
     LayoutModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDialogModule
   ],
   exports: [ // lo exportamos para que lo puedna usar otros modulos
     MatButtonModule,
@@ -62,7 +63,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatPaginatorModule,
     LayoutModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }

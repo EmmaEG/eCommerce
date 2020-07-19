@@ -13,10 +13,6 @@ form {
     width: -webkit-fill-available;
 }
 
-.mat-card {
-    box-shadow: none;
-}
-
 .mat-card-header {
     display: block;
 }
@@ -24,4 +20,17 @@ form {
 .form-container {
     width: max-content;
 }
+
+.message {
+    display: inline-table;
+	background: black;
+    width: 75%;
+    height: 20px;
+    margin-top: 2%;
+}
+
+.text {
+    color: white;
+    font-size: 15px;
+}   
 

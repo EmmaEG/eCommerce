@@ -18,7 +18,7 @@ export class OrderComponent implements OnInit {
     private cartService: CartService
   ) {
     this.products$ = this.cartService.cart$;
-    // así no tenemos que subscribirnos simoplemente es un oservable que escucha el array continuamente de los productos que agregamos
+    // así no tenemos que subscribirnos simplemente es un oservable que escucha el array continuamente de los productos que agregamos
    }
 
   ngOnInit(): void {

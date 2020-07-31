@@ -12,12 +12,13 @@ import { CartService } from './../../../core/services/cart.service';
 })
 export class OrderComponent implements OnInit {
 
-  products$: Observable<Product[]>;
+  products$: Observable<Product[]>; // los flujos de datos los colocamos con el signo $
 
   constructor(
     private cartService: CartService
   ) {
-    this.products$ = this.cartService.cart$; // escucha el array continuamente de los productos que agregamos
+    this.products$ = this.cartService.cart$;
+    // así no tenemos que subscribirnos simoplemente es un oservable que escucha el array continuamente de los productos que agregamos
    }
 
   ngOnInit(): void {

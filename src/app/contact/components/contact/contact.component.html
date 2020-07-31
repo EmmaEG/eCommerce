@@ -21,14 +21,9 @@
     </mat-card-content>
     <mat-card-actions>
                 <a mat-raised-button routerLink="/home">Cancel</a>
-                <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid || this.status != 'true'">Enviar</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Enviar</button>
     </mat-card-actions>
     </mat-card>
-    <mat-card class="message" *ngIf="status === 'false'">
-      <mat-card-content class="text">
-        El mensaje fue enviado con éxito
-      </mat-card-content>
-    </mat-card >
   </form>
   
 

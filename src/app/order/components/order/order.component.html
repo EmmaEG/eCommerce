@@ -1,8 +1,8 @@
 <mat-horizontal-stepper>
     <mat-step>
         <ng-template matStepLabel>Sus Productos</ng-template>
-        <div *ngIf="(products$ | async) as products">
-            <p *ngIf="products.length === 0">No hay productos</p>
+        <div *ngIf="(products$ | async) as products"> <!--Subscribete una vez y creo una variable products para reutilizar en el template, con esto me subscribo una vez y bajo el consumo de memoria-->
+            <p *ngIf="products.length === 0">No hay productos en el carrito</p>
             <div class="row" *ngFor="let product of products">
                 <div class="col-xs-12 col-ms-2 col-md-2">
                     <div class="box">
@@ -18,7 +18,7 @@
                     <div class="box">
                         {{ product.price | currency}}
                     </div>
-                </div> <!--52-->
+                </div> 
             </div>
         </div>
     </mat-step>

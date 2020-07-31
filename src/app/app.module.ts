@@ -6,6 +6,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +36,8 @@ import { environment } from './../environments/environment';
     AngularFireModule.initializeApp(environment.firebase), // le pasamos las llaves
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

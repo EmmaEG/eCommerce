@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 
 import { ContactDbService } from './../../../core/services/contact/contact-db.service';
 
@@ -18,9 +20,9 @@ export class ContactComponent implements OnInit {
     private formBuilder: FormBuilder,
     private contactDbService: ContactDbService,
     private router: Router,
+    private toastr: ToastrService
   ) {
     this.buildForm(); // llamamos al metodo aquí dado que es una construccion
-    this.status = 'true';
    }
 
   ngOnInit() {
@@ -40,10 +42,10 @@ export class ContactComponent implements OnInit {
     if (this.contactForm.valid){
     this.contactDbService.saveMessage(this.contactForm.value);
     this.contactForm.reset();
+    this.toastr.success('su mensaje ha sido enviado');
     this.contactForm.get('name').setErrors(null);
     this.contactForm.get('email').setErrors(null);
     this.contactForm.get('message').setErrors(null);
-    this.status = 'false';
     setTimeout(() => {
       this.router.navigate(['./home']);
      }, 3000);

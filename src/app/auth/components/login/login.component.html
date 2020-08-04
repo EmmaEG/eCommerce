@@ -1,3 +1,4 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center center">
 <form [formGroup]="form" (ngSubmit)="login($event)">
     <mat-card>
       <mat-card-header>
@@ -7,14 +8,14 @@
         <div class="row">
           <div class="col-xs">
             <mat-form-field>
-              <input placeholder="email" formControlName="email" matInput type="email">
+              <input placeholder="email" formControlName="email" matInput type="email" required>
             </mat-form-field>
           </div>
         </div>
         <div class="row">
           <div class="col-xs">
             <mat-form-field>
-              <input placeholder="password" formControlName="password" matInput type="password">
+              <input placeholder="password" formControlName="password" matInput type="password" required>
             </mat-form-field>
           </div>
         </div>
@@ -22,7 +23,10 @@
       <mat-card-actions>
         <button [disabled]="form.invalid" mat-raised-button type="submit">Ingresar</button>
       </mat-card-actions>
-    </mat-card>
-    
+      <mat-card-actions>
+        Si no estas regsitrado, registrate haciendo click <a routerLink="/auth/register">ACÁ</a>
+      </mat-card-actions>
+    </mat-card>    
   </form>
+</div>
   

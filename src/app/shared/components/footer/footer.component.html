@@ -27,8 +27,12 @@
           <div class="box">
             <h3>Acerca de Store</h3>
             <ul>
-              <li><a routerLink="/home">Sobre nosotros</a></li>
-              <li><a routerLink="/home">Nuestras tiendas</a></li>
+              <li><a routerLink="/home" [queryParams]="{ type: 'about' }"
+                >Sobre nosotros</a>
+              </li>
+              <li><a routerLink="/home" [queryParams]="{ type: 'about' }"
+                >Nuestras tiendas</a
+                ></li>
             </ul>
           </div>
         </div>

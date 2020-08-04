@@ -6,6 +6,9 @@ footer {
   padding: 50px 0px;
   margin-top: 20px;
   background-color: mat-color($primary);
+  position: inherit;
+  bottom: 0;
+  width: -webkit-fill-available;
   .box {
     h3 {
       color: white;

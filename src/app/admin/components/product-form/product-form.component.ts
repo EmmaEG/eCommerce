@@ -6,6 +6,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.scss']
 })
+
 export class ProductFormComponent {
   addressForm = this.fb.group({
     company: null,
@@ -89,5 +90,7 @@ export class ProductFormComponent {
 
   onSubmit() {
     alert('Thanks!');
+    this.addressForm.reset();
+
   }
 }

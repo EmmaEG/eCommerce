@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { style } from '@angular/animations';
-import { HttpBackend } from '@angular/common/http';
 
 
 @Component({
@@ -36,7 +34,7 @@ export class FooterComponent implements OnInit {
       console.log(this.emailField.value);
     }
     this.emailField.reset();
-    this.toastr.success('pronto nos pondremos en contacto', 'Su email se registro con éxito');
+    this.toastr.success('gracias por suscribirte', 'Tú email se registró con éxito');
   }
 
 }

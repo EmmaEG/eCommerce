@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -48,7 +48,7 @@ export class ContactComponent implements OnInit {
     this.contactForm.get('message').setErrors(null);
     setTimeout(() => {
       this.router.navigate(['./home']);
-     }, 3000);
+     }, 2000);
     }
   }
 

@@ -1,0 +1,96 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Datos de compra</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Nombre" formControlName="firstName">
+              <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
+                Este campo es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Apellido" formControlName="lastName">
+              <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                Este campo es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Domicilio de entrega" formControlName="address"></textarea>
+              <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
+                Este campo es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Localidad" formControlName="city">
+              <mat-error *ngIf="addressForm.controls['city'].hasError('required')">
+                Este campo es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Partido" formControlName="state">
+                <mat-option *ngFor="let state of states" [value]="state.name">
+                  {{ state.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
+                Este campo es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Código Postal" type="number" formControlName="postalCode">
+              <mat-error *ngIf="addressForm.controls['postalCode'].hasError('required')">
+                Este campo es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Teléfono de contacto" type="number" formControlName="phone">
+                <mat-error *ngIf="addressForm.controls['phone'].hasError('required')">
+                  Este campo es <strong>obligatorio</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        <!--
+        <div class="row">            
+          <div class="col">              
+            <mat-radio-group formControlName="shipping">
+              <mat-radio-button value="free">Envío contra reembolso</mat-radio-button>
+              <mat-radio-button value="priority">Priority Shipping</mat-radio-button>
+              <mat-radio-button value="nextday">Next Day Shipping</mat-radio-button>
+            </mat-radio-group>
+          </div>          
+        </div>
+        -->
+      </mat-card-content>
+      <!--
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+      -->
+    </mat-card>
+  </form>  
+  <button mat-raised-button color="secondary" matStepperPrevious>Atras</button>
+  <button mat-raised-button div="next" color="primary" matStepperNext [disabled]="addressForm.invalid">Siguiente</button>
+  

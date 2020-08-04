@@ -6,12 +6,8 @@
             <div class="row" *ngFor="let product of products">
                 <div class="col-xs-12 col-ms-2 col-md-2">
                     <div class="box">
-                        <img class="image" [src]="product.image" alt="">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-ms-2 col-md-2">
-                    <div class="box">
                         {{ product.title }}
+                        <img class="image" [src]="product.image" alt="">
                     </div>
                 </div>
                 <div class="col-xs-12 col-ms-2 col-md-2">
@@ -20,14 +16,15 @@
                     </div>
                 </div> 
             </div>
+        <button mat-raised-button color="primary" matStepperNext [disabled]="products.length === 0">Siguiente</button>
         </div>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Datos Personales</ng-template>
-        <h1>Datos</h1>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Pago</ng-template>
-        <h1>pago</h1>
-    </mat-step>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Datos Personales</ng-template>
+            <app-customer-data></app-customer-data>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Pago</ng-template>
+            <h1>pago</h1>
+        </mat-step>
 </mat-horizontal-stepper>

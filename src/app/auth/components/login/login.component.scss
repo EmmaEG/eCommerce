@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  background-image: url(./../../../../assets/images/login.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: -webkit-fill-available;
+  min-width: -webkit-fill-available;
+}
+
+
+mat-card {
+  text-align: center;
+  width: 25%;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: none;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.mat-form-field {
+  width: -webkit-fill-available;
+  margin-top: 15px;;
+}
+
+.mat-card-actions a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+

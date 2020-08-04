@@ -68,6 +68,6 @@ export class ProductDetailComponent implements OnInit {
 
 }
 
-/* 1) quiero los parametros que tenga en la ruta y nos subscribimos para escuchar los cambios que haya
+/* 1) Quiero los parametros que tenga en la ruta y nos subscribimos para escuchar los cambios que haya
 en los paramteros y lo tipamos le decimos que los parametros sean de tipo params y ejecutamos la funcion
 aqui vamos a recibir todos los parametros que tenga la ruta */

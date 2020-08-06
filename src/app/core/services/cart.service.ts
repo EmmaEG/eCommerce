@@ -29,7 +29,7 @@ export class CartService {
 array y lo inicializamos en vacío*/
 /* 3 declaramos una variable publica para que cualquiera se subscriba a ella y tener los cambios en tiempo
 real */
-/* 4 cada vez que agreguen algo al carrito inseto una nueva variable, sin embargo no lo hago con el metodo
+/* 4 cada vez que agreguen algo al carrito inserto una nueva variable, sin embargo no lo hago con el metodo
 push xq cada vez voy a hacer una nueva referencia del arreglo y luego de la coma agregamos el último
 producto, de esta manera estamos generando un nuevo estado del array */
 /* 5  luego notificamos a todos los componentes que esten subscriptos que algo se agregó al carrito, estso

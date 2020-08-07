@@ -1,7 +1,7 @@
 <mat-horizontal-stepper>
     <mat-step>
         <ng-template matStepLabel>Sus Productos</ng-template>
-        <div *ngIf="(products$ | async | countProduct) as products"> <!--Subscribete una vez y creo una variable products para reutilizar en el template, con esto me subscribo una vez y bajo el consumo de memoria-->
+        <div *ngIf="(products$ | async | countProduct) as products"> <!--con async le decimos que ejecutamos el observable una vez que se cumpla con la suscripcion, ademas, Subscribete una vez y creo una variable products para reutilizar en el template, con esto me subscribo una vez y bajo el consumo de memoria-->
             <p *ngIf="products.length === 0">No hay productos en el carrito</p>
             <div class="row" *ngFor="let product of products">
                 <div class="col-xs-12 col-ms-2 col-md-2">

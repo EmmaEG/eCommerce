@@ -12,13 +12,12 @@ import { CartService } from './../../../core/services/cart.service';
 })
 export class OrderComponent implements OnInit {
 
-  products$: Observable<Product[]>; // los flujos de datos los colocamos con el signo $
+  products$: Observable<Product[]>; // 1
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService // 2
   ) {
-     this.products$ = this.cartService.cart$;
-    // así no tenemos que subscribirnos simplemente es un oservable que escucha el array continuamente de los productos que agregamos
+     this.products$ = this.cartService.cart$; // 3
 
   }
 
@@ -26,3 +25,9 @@ export class OrderComponent implements OnInit {
   }
 
 }
+
+/* 1 array de productos que estamos escuchando del carrito y lo innicializamos en vacío, como es un observable
+  le ponemos el signo pesos
+*/
+// 2 llamamos a nuestro servicio de carrito, lo inyectamos como una dependencia
+// 3 escuchamos dinamicamente como agregamos productos al carrito

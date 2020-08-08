@@ -21,6 +21,15 @@ export class OrderComponent implements OnInit {
 
   }
 
+  addProduct(product: Product) {
+    this.cartService.addCart(product);
+  }
+
+  deleteProduct(product: Product) {
+    this.cartService.deleteCart(product);
+  }
+
+
   ngOnInit(): void {
   }
 

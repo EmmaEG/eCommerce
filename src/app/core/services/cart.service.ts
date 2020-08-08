@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs'; // añade principios reactivos
 
 import { Product } from './../models/product.model';
+import { findLast } from '@angular/compiler/src/directive_resolver';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,11 @@ export class CartService {
     this.cart.next(this.products); // 6
   }
 
+  deleteCart(product: Product) {
+    this.products = [...this.products.splice(0, 1), product];
+    this.cart.next(this.products);
+  }
+
 }
 
 
@@ -32,10 +39,11 @@ en un array en vacío, es decir el carrito inicia con cero productos*/
 para que cualquiera se subscriba a ella y tener los cambios en tiempo real, entonces simplemente la instanciamos
 "this.cart" y le decimos que se comporte como un observable "".asObservable"*/
 
-/*6 ahora creamos un metodo para agregar productos al carrito, a este metodo le enviamos un producto (obvio)
-que es de tipo product */
 /* 5 cada vez que agreguen algo al carrito inserto una nueva variable, sin embargo no lo hago con el metodo
 push xq cada vez voy a hacer una nueva referencia del arreglo y luego de la coma agregamos el último
 producto, de esta manera estamos generando un nuevo estado del array */
 /* 6  luego notificamos a todos los componentes que esten suscriptos que algo se agregó al carrito, estso
-lo hago con next y luego le paso la copia del array o del nuevo estado actual "this.products"*/
+lo hago con next y luego le paso la copia del array o del nuevo estado actual "this.products"
+
+ahora creamos un metodo para agregar productos al carrito, a este metodo le enviamos un producto (obvio)
+que es de tipo product */

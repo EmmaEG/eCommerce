@@ -62,5 +62,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
         // this.productClicked.emit(this.product.id);
     }
 
+ 
+
 }
 

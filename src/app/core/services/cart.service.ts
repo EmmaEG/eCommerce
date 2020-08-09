@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs'; // añade principios reactivos
 
 import { Product } from './../models/product.model';
-import { findLast } from '@angular/compiler/src/directive_resolver';
-import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +22,7 @@ export class CartService {
   }
 
   deleteCart(product: Product) {
-    this.products = [...this.products.splice(0, 1), product];
+    this.products = [...this.products.splice(1), product];
     this.cart.next(this.products);
   }
 

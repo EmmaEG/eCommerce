@@ -17,7 +17,6 @@ export class CountProductPipe implements PipeTransform {
       } else {
         const index = newList.findIndex(el => el.id === element.id);
         newList[index].cantidad++;
-        newList[index].price += element.price;
       }
     });
     // console.log(newList);

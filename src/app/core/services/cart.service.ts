@@ -21,10 +21,20 @@ export class CartService {
     this.cart.next(this.products); // 6
   }
 
+/*   deleteCart(product: Product) {
+    const eliminar = this.products.findIndex(p => p.id === product.id);
+    this.products = [...this.products.splice(eliminar, 1), product];
+    this.cart.next(this.products);
+  } */
+
   deleteCart(product: Product) {
-    this.products = [...this.products.splice(1), product];
+    const eliminar = this.products.findIndex(p => p.id === product.id);
+    this.products.splice(eliminar, 1);
+    // si quieres crear un array nuevo puedes hacer lo siguiente
+    this.products = [...this.products];
     this.cart.next(this.products);
   }
+
 
 }
 
@@ -45,3 +55,23 @@ lo hago con next y luego le paso la copia del array o del nuevo estado actual "t
 
 ahora creamos un metodo para agregar productos al carrito, a este metodo le enviamos un producto (obvio)
 que es de tipo product */
+
+
+/* El problema está en la siguiente línea this.products =[...this.products.splice(eliminar), product];.
+
+Estas añadiendo otra vez el producto borrado con el splice. La variable product no hace falta que la vuelves a
+añadir en el array. Debería ser así this.products = [...this.products.splice(eliminar)];
+
+Otro error es que el splice no te devuelve un nuevo array con los nuevos elementos sino que modifica el array
+original que tiene y devuelve los elementos borrados. Por lo tanto, el spread que haces
+[...this.products.splice(eliminar)]; no es correcto.
+
+La solución sería así.
+
+deleteCart(product: Product) {
+  const eliminar = this.products.findIndex(p => p.id === product.id);
+  this.products.splice(eliminar, 1);
+  // si quieres crear un array nuevo puedes hacer lo siguiente
+  // this.products = [...this.products];
+  this.cart.next(this.products);
+} */

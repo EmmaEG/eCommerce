@@ -8,6 +8,7 @@ export class CountProductPipe implements PipeTransform {
 
   transform(products: Product[], ...args: unknown[]): any[] {
     const newList: any[] = [];
+
     products.forEach((element: any) => {
       const newElement = newList.find(product => product.id === element.id);
       if (!newElement) {
@@ -17,9 +18,11 @@ export class CountProductPipe implements PipeTransform {
       } else {
         const index = newList.findIndex(el => el.id === element.id);
         newList[index].cantidad++;
+        newList[index].price = element.price;
       }
     });
     // console.log(newList);
     return newList;
  }
 }
+

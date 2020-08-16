@@ -17,3 +17,9 @@ nav > a.active {
 }
 
 
+//en pantalla hasta de 650px
+@media (max-width: 650px) { 
+    .identity {
+        display: none;
+    }
+}
